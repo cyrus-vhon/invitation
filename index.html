@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Johndel &amp; Klarisse — We're Getting Married</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Cinzel:wght@400;500;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body class="gate-active">
+
+<!-- ============ LANDING GATE (GUEST WELCOME) ============ -->
+<div class="landing-gate" id="landingGate">
+  <div class="gate-bg">
+    <img src="1.jpg" alt="Johndel and Klarisse" class="gate-bg-img">
+    <div class="gate-scrim"></div>
+  </div>
+  <div class="gate-content">
+    <p class="gate-eyebrow">YOU ARE INVITED</p>
+    <h1 class="gate-title">Johndel &amp; Klarisse</h1>
+    <div class="gate-divider">
+      <span class="gate-line"></span>
+      <span class="gate-diamond">&#9670;</span>
+      <span class="gate-line"></span>
+    </div>
+    <p class="gate-date">WEDNESDAY, JANUARY 20, 2027</p>
+
+    <!-- Step 1: Name Entry Card -->
+    <div class="gate-card" id="gateCard">
+      <p class="gate-card-label">ENTER YOUR NAME TO CONTINUE</p>
+      <div class="gate-form-wrap">
+        <input type="text" id="guestNameInput" class="gate-input" placeholder="Your full name" autocomplete="off">
+        <p class="gate-error" id="gateError" style="display:none;">Please enter your name to view your invitation</p>
+        <button type="button" id="gateBtn" class="gate-btn">ENTER</button>
+      </div>
+    </div>
+
+    <!-- Step 2: Preparing Invitation Transition -->
+    <div class="gate-welcome" id="gateWelcome" style="display:none;">
+      <p class="gate-welcome-label">Welcome,</p>
+      <h2 class="gate-welcome-name" id="gateGuestSpan">Dearest Guest</h2>
+      <p class="gate-preparing-text">Preparing your invitation<span class="gate-dots">...</span></p>
+      <div class="gate-dots-loader">
+        <span class="gate-dot"></span>
+        <span class="gate-dot"></span>
+        <span class="gate-dot"></span>
+      </div>
+    </div>
+
+    <p class="gate-footer">CRAFTED WITH LOVE</p>
+  </div>
+</div>
+
+<header class="nav" id="nav">
+  <div class="nav-inner">
+    <a href="#home" class="nav-mono">J &amp; K</a>
+    <button class="nav-toggle" id="navToggle" aria-label="Open menu">☰</button>
+    <nav class="nav-links" id="navLinks">
+      <a href="#home">Home</a>
+      <a href="#timeline">Timeline</a>
+      <a href="#gallery">Gallery</a>
+      <a href="#entourage">Entourage</a>
+      <a href="#dresscode">Dress Code</a>
+      <a href="#rsvp">RSVP</a>
+    </nav>
+  </div>
+</header>
+
+<!-- ============ HERO ============ -->
+<section class="hero" id="home">
+  <video class="hero-video" muted loop playsinline preload="metadata" poster="1.jpg">
+    <source src="hero.mp4" type="video/mp4">
+  </video>
+  <div class="hero-text">
+    <p class="eyebrow">The wedding of</p>
+    <h1 class="hero-name">Johndel</h1>
+    <span class="hero-amp">&amp;</span>
+    <h1 class="hero-name">Klarisse</h1>
+  </div>
+</section>
+
+<!-- ============ COUNTDOWN ============ -->
+<section class="countdown-section">
+  <p class="eyebrow">Until we say I do</p>
+  <div class="countdown" id="countdown">
+    <div class="count-box"><span id="cd-days">00</span><small>Days</small></div>
+    <span class="count-sep">:</span>
+    <div class="count-box"><span id="cd-hours">00</span><small>Hours</small></div>
+    <span class="count-sep">:</span>
+    <div class="count-box"><span id="cd-mins">00</span><small>Minutes</small></div>
+    <span class="count-sep">:</span>
+    <div class="count-box"><span id="cd-secs">00</span><small>Seconds</small></div>
+  </div>
+</section>
+
+<!-- ============ TIMELINE / EVENT SCHEDULE ============ -->
+<section class="section cream" id="timeline">
+  <p class="eyebrow center">Mark your calendar</p>
+  <h2 class="script center">Event Schedule</h2>
+  <p class="lede center">We have a beautiful day planned, here is what to expect.</p>
+
+  <div class="cards">
+    <div class="card">
+      <p class="eyebrow small">Ceremony</p>
+      <h3 class="card-title">St. John Marie Vianney<br>Parish Church</h3>
+      <p class="card-address">St. John Marie Vianney Parish Church, E. Aguinaldo Highway, Lalaan II, Silang, Cavite</p>
+      <p class="card-time">2:00 PM</p>
+      <a class="btn-outline" href="https://maps.google.com/?q=St.+John+Marie+Vianney+Parish+Church+Silang+Cavite" target="_blank" rel="noopener">View on map</a>
+    </div>
+    <div class="card">
+      <p class="eyebrow small">Reception</p>
+      <h3 class="card-title">Ad Meliora Countryside<br>Garden</h3>
+      <p class="card-address">5WP8+QC5, A. Mabini St, Barangay 5, Amadeo, Cavite</p>
+      <p class="card-time">4:00 PM</p>
+      <a class="btn-outline" href="https://maps.google.com/?q=Ad+Meliora+Countryside+Garden+Amadeo+Cavite" target="_blank" rel="noopener">View on map</a>
+    </div>
+  </div>
+
+  <div class="timeline-actions">
+    <a class="btn-timeline-action btn-calendar" href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Johndel+%26+Klarisse+Wedding&dates=20270120T140000/20270120T220000&details=Wedding+Celebration+of+Johndel+%26+Klarisse.+Ceremony+at+St.+John+Marie+Vianney+Parish+Church+(2:00+PM)+and+Reception+at+Ad+Meliora+Countryside+Garden+(4:00+PM).&location=St.+John+Marie+Vianney+Parish+Church,+Silang,+Cavite&ctz=Asia/Manila" target="_blank" rel="noopener">
+      <svg class="action-icon" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+        <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+        <line x1="16" y1="2" x2="16" y2="6"></line>
+        <line x1="8" y1="2" x2="8" y2="6"></line>
+        <line x1="3" y1="10" x2="21" y2="10"></line>
+      </svg>
+      Add to Calendar
+    </a>
+    <button type="button" class="btn-timeline-action btn-order" id="orderToggleBtn" aria-expanded="false">
+      <svg class="action-icon" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="12" cy="12" r="10"></circle>
+        <polyline points="12 6 12 12 16 14"></polyline>
+      </svg>
+      Order of Events
+      <span class="order-toggle-arrow" id="orderArrow">&#9662;</span>
+    </button>
+  </div>
+
+  <!-- Interactive Order of Events Schedule Panel -->
+  <div class="order-events-panel" id="orderEventsPanel" style="display:none;">
+    <div class="order-inner">
+      <h3 class="order-heading">Wedding Day Schedule</h3>
+      <p class="order-sub">Wednesday, January 20, 2027 &bull; Silang &amp; Amadeo, Cavite</p>
+      
+      <div class="order-timeline-list">
+        <div class="order-item">
+          <div class="order-time">1:30 PM</div>
+          <div class="order-marker">
+            <span class="order-dot"></span>
+            <span class="order-line"></span>
+          </div>
+          <div class="order-info">
+            <h4 class="order-title">Guest Arrival &amp; Assembly</h4>
+            <p class="order-desc">Guests arrive and are welcomed at St. John Marie Vianney Parish Church.</p>
+          </div>
+        </div>
+
+        <div class="order-item">
+          <div class="order-time">2:00 PM</div>
+          <div class="order-marker">
+            <span class="order-dot"></span>
+            <span class="order-line"></span>
+          </div>
+          <div class="order-info">
+            <h4 class="order-title">Nuptial Mass &amp; Solemn Ceremony</h4>
+            <p class="order-desc">Bridal processional, exchange of vows and wedding rings, and holy blessing.</p>
+          </div>
+        </div>
+
+        <div class="order-item">
+          <div class="order-time">3:30 PM</div>
+          <div class="order-marker">
+            <span class="order-dot"></span>
+            <span class="order-line"></span>
+          </div>
+          <div class="order-info">
+            <h4 class="order-title">Pictorials &amp; Church Recessional</h4>
+            <p class="order-desc">Photo sessions with family and entourage, followed by departure for the reception venue.</p>
+          </div>
+        </div>
+
+        <div class="order-item">
+          <div class="order-time">4:00 PM</div>
+          <div class="order-marker">
+            <span class="order-dot"></span>
+            <span class="order-line"></span>
+          </div>
+          <div class="order-info">
+            <h4 class="order-title">Cocktail Hour &amp; Welcome Refreshments</h4>
+            <p class="order-desc">Grazing table, welcome drinks, photobooth, and acoustic lounge music at Ad Meliora Countryside Garden.</p>
+          </div>
+        </div>
+
+        <div class="order-item">
+          <div class="order-time">5:30 PM</div>
+          <div class="order-marker">
+            <span class="order-dot"></span>
+            <span class="order-line"></span>
+          </div>
+          <div class="order-info">
+            <h4 class="order-title">Grand Entrance &amp; Dinner Banquet</h4>
+            <p class="order-desc">Grand entrance of Mr. &amp; Mrs., opening prayer, and dinner service.</p>
+          </div>
+        </div>
+
+        <div class="order-item">
+          <div class="order-time">6:45 PM</div>
+          <div class="order-marker">
+            <span class="order-dot"></span>
+            <span class="order-line"></span>
+          </div>
+          <div class="order-info">
+            <h4 class="order-title">Traditions, Cake &amp; Champagne Toasts</h4>
+            <p class="order-desc">Entourage speeches, cutting of the wedding cake, and champagne toasts with loved ones.</p>
+          </div>
+        </div>
+
+        <div class="order-item">
+          <div class="order-time">7:30 PM</div>
+          <div class="order-marker">
+            <span class="order-dot"></span>
+            <span class="order-line"></span>
+          </div>
+          <div class="order-info">
+            <h4 class="order-title">First Dance &amp; Celebration Party</h4>
+            <p class="order-desc">Couples' first dance, bouquet/garter fun, and opening of the dance floor.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ NOTE FROM US ============ -->
+<section class="section blush note-section">
+  <p class="eyebrow center">A note from us</p>
+  <p class="quote-mark">&ldquo;</p>
+  <p class="note-text">
+    To our dearest family and friends, thank you for being the most beautiful part of our story.
+    Your love and presence have carried us to this moment, and we cannot imagine celebrating it
+    without you.
+  </p>
+  <p class="note-text">
+    With full hearts and open arms, we welcome you to witness the beginning of our forever.
+  </p>
+  <p class="signoff">With all our love,<br><span class="script small-script">Johndel &amp; Klarisse</span></p>
+</section>
+
+<!-- ============ ABOUT / GROOM & BRIDE ============ -->
+<section class="section cream">
+  <div class="about-grid">
+    <div class="about-card">
+      <img src="1.jpg" alt="Johndel" loading="lazy">
+      <p class="eyebrow small">The groom</p>
+      <h3 class="script mid">Johndel</h3>
+      <p class="about-desc">Bringing big athletic energy and amazing recipes to this marriage.</p>
+    </div>
+    <div class="about-card">
+      <img src="2.jpg" alt="Klarisse" loading="lazy">
+      <p class="eyebrow small">The bride</p>
+      <h3 class="script mid">Klarisse</h3>
+      <p class="about-desc">A brilliant lung doctor with an even bigger heart.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ GALLERY ============ -->
+<section class="section blush" id="gallery">
+  <p class="eyebrow center">Captured moments</p>
+  <h2 class="script center">Gallery</h2>
+  <p class="lede center">A little pre-wedding photo dump</p>
+  <div class="gallery-grid" id="galleryGrid">
+    <img src="1.jpg" alt="Johndel and Klarisse 1" loading="lazy">
+    <img src="2.jpg" alt="Johndel and Klarisse 2" loading="lazy">
+    <img src="3.jpg" alt="Johndel and Klarisse 3" loading="lazy">
+    <img src="4.jpg" alt="Johndel and Klarisse 4" loading="lazy">
+    <img src="5.jpg" alt="Johndel and Klarisse 5" loading="lazy">
+    <img src="6.jpg" alt="Johndel and Klarisse 6" loading="lazy">
+    <img src="7.jpg" alt="Johndel and Klarisse 7" loading="lazy">
+    <img src="8.jpg" alt="Johndel and Klarisse 8" loading="lazy">
+    <img src="9.jpg" alt="Johndel and Klarisse 9" loading="lazy">
+    <img src="10.jpg" alt="Johndel and Klarisse 10" loading="lazy">
+    <img src="11.jpg" alt="Johndel and Klarisse 11" loading="lazy">
+    <img src="12.jpg" alt="Johndel and Klarisse 12" loading="lazy">
+    <img src="13.jpg" alt="Johndel and Klarisse 13" loading="lazy">
+    <img src="14.jpg" alt="Johndel and Klarisse 14" loading="lazy">
+  </div>
+</section>
+
+<!-- ============ ENTOURAGE ============ -->
+<section class="section cream" id="entourage">
+  <p class="eyebrow center">The wedding</p>
+  <h2 class="script center">Entourage</h2>
+
+  <div class="entourage-block">
+    <div class="entourage-col">
+      <p class="eyebrow small center">Parents of the groom</p>
+      <p class="ent-name center">Mr. Severino DG. Catapang</p>
+      <p class="ent-name center">Mrs. Virginia A. Catapang</p>
+    </div>
+    <div class="entourage-col">
+      <p class="eyebrow small center">Parents of the bride</p>
+      <p class="ent-name center">Mr. Antonio D. Talibsao</p>
+      <p class="ent-name center">Mrs. Luisa R. Talibsao</p>
+    </div>
+  </div>
+
+  <div class="entourage-block two-col">
+    <div class="entourage-col">
+      <p class="eyebrow small center gold">Ninong</p>
+      <p class="ent-name center">Mr. Dennis Alconaba</p>
+      <p class="ent-name center">Mr. Roy Ramos</p>
+      <p class="ent-name center">Mr. Cesar Mercado</p>
+      <p class="ent-name center">Hon. Dr. Luisito Alconaba</p>
+      <p class="ent-name center">Dr. John Añonuevo</p>
+      <p class="ent-name center">Dr. Andrew Gonzales</p>
+      <p class="ent-name center">Mr. Marcial Seron Jr.</p>
+      <p class="ent-name center">Mrs. Alma Real</p>
+      <p class="ent-name center">Mr. Cesar Regalado</p>
+    </div>
+    <div class="entourage-col">
+      <p class="eyebrow small center gold">Ninang</p>
+      <p class="ent-name center">Dr. Maria Consolacion Yabut-Alconaba</p>
+      <p class="ent-name center">Mrs. Lolit Ramos</p>
+      <p class="ent-name center">Mrs. Remedios Mercado</p>
+      <p class="ent-name center">Mrs. Janice Pantino</p>
+      <p class="ent-name center">Dra. Sonia Ubando-Algabre</p>
+      <p class="ent-name center">Dr. Ethel Añonuevo</p>
+      <p class="ent-name center">Dr. Lenora Fernandez</p>
+      <p class="ent-name center">Dr. Venus Marie Caballes-Seron</p>
+      <p class="ent-name center">Hon. Christopher Sarmiento</p>
+      <p class="ent-name center">Mrs. Magie Regalado</p>
+    </div>
+  </div>
+
+    <div class="entourage-block two-col">
+    <div class="entourage-col">
+      <p class="eyebrow small center">Secondary Sponsor - Candle</p>
+      <p class="ent-name center">Mr. Chester Myron Ramos</p>
+      <p class="ent-name center">Dr. Angelica Mariano</p>
+    </div>
+    <div class="entourage-col">
+      <p class="eyebrow small center">Secondary Sponsor - Veil</p>
+      <p class="ent-name center">Mr. Errol Jerico Inumerable</p>
+      <p class="ent-name center">Dr. Shiema Chris Candolita</p>
+    </div>
+  </div>
+
+  <div class="entourage-block">
+    <div class="entourage-col">
+      <p class="eyebrow small center">Secondary Sponsor - Cord</p>
+      <p class="ent-name center">Mr. John Joseph Maningning</p>
+      <p class="ent-name center">Dr. Kimberley Rose Oliveros</p>
+    </div>
+  </div>
+
+  <div class="entourage-block two-col">
+    <div class="entourage-col">
+      <p class="eyebrow small center">Best Men</p>
+      <p class="ent-name center">Mr. Runel Ehavez</p>
+      <p class="ent-name center">Mr. Francis Gauden Talibsao</p>
+    </div>
+    <div class="entourage-col">
+      <p class="eyebrow small center">Maids of honor</p>
+      <p class="ent-name center">Dr. Jan Paula Dela Pena</p>
+      <p class="ent-name center">Ms. Korina Sandra Salvamante</p>
+    </div>
+  </div>
+
+  <div class="entourage-block two-col">
+    <div class="entourage-col">
+      <p class="eyebrow small center">Groomsman</p>
+      <p class="ent-name center">Mr. June Noel Dela Vina</p>
+    </div>
+    <div class="entourage-col">
+      <p class="eyebrow small center">Bridesmaid</p>
+      <p class="ent-name center">Dr. Ma Felilia Noela Ctaquis-Centeno</p>
+    </div>
+  </div>
+
+  <div class="entourage-block">
+    <div class="entourage-col">
+      <p class="eyebrow small center">Junior Entourage - Bearer</p>
+      <p class="ent-name center">Shan Jerphel Catapang</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ DRESS CODE ============ -->
+<section class="section blush" id="dresscode">
+  <p class="eyebrow center">Attire</p>
+  <h2 class="script center">Formal</h2>
+  <p class="lede center">We dream of a classic, formal ceremony and kindly request our guests to dress accordingly.</p>
+
+  <div class="dress-row">
+    <div class="dress-copy">
+      <p class="eyebrow small">Principal sponsors</p>
+      <p class="dress-line">Ninong: Barong Tagalog and black slacks.</p>
+      <p class="dress-line">Ninang: Long gown in the shade of beige.</p>
+      <div class="swatches">
+        <span class="swatch" style="background:#e9d9c8"></span>
+        <span class="swatch" style="background:#d9c4a6"></span>
+        <span class="swatch" style="background:#8a6b52"></span>
+        <span class="swatch" style="background:#f1e6d6"></span>
+      </div>
+    </div>
+  </div>
+
+  <div class="dress-row">
+    <div class="dress-copy">
+      <p class="eyebrow small">Our dearest guests</p>
+      <p class="dress-line">Gentlemen: Strictly Barong Tagalog &amp; black pants.</p>
+      <p class="dress-line">Ladies: Strictly long gowns or floor-length dresses, in pastel pink, peach, green, or blue pastel hues.</p>
+      <div class="swatches">
+        <span class="swatch" style="background:#f2c9d2"></span>
+        <span class="swatch" style="background:#f4c9a0"></span>
+        <span class="swatch" style="background:#b8d8bd"></span>
+        <span class="swatch" style="background:#b6cfe6"></span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FAQ ============ -->
+<section class="section cream" id="faq">
+  <h2 class="script center">Good to Know</h2>
+  <div class="faq-list" id="faqList">
+    <div class="faq-item">
+      <button class="faq-q">Can I bring a plus one? <span>+</span></button>
+      <div class="faq-a"><p>Due to our intimate venue capacity, we can only accommodate guests listed on our invitation. We truly appreciate your understanding and look forward to celebrating with you.</p></div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q">Are children welcome? <span>+</span></button>
+      <div class="faq-a"><p>We have planned an adults-only celebration so that all our guests can fully relax and enjoy the evening. We hope you understand and appreciate your support.</p></div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q">Is there parking available? <span>+</span></button>
+      <div class="faq-a"><p>Yes, complimentary parking is available at both venues. Our ushers will be happy to guide you upon arrival.</p></div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q">What is the attire for guests? <span>+</span></button>
+      <div class="faq-a"><p>Help us bring our dream of a formal wedding ceremony to life. Gentlemen: strictly Barong Tagalog paired with black slacks. Ladies: strictly long, floor-length dresses or gowns. We gently request no t-shirts, polo shirts, shorts, slippers, female pants, mini skirts, or cocktail gowns.</p></div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q">What time should I arrive? <span>+</span></button>
+      <div class="faq-a"><p>We kindly ask that you arrive at least 30 minutes before the ceremony begins to allow time for seating and to avoid any disruptions during the processional.</p></div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q">Can I take photos during the ceremony? <span>+</span></button>
+      <div class="faq-a"><p>We welcome you to take as many photos and videos as you'd like during our ceremony and reception! Please help us preserve these memories by scanning the QR code provided to upload your captures to our digital wedding album. We just kindly ask that you refrain from blocking or stepping into the center aisle while the entourage and bride are walking, so our photo and video team have a clear, unobstructed view to capture these once-in-a-lifetime moments perfectly.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ RSVP ============ -->
+<section class="section blush" id="rsvp">
+  <p class="eyebrow center">Join us</p>
+  <h2 class="script center">RSVP</h2>
+  <p class="lede center">We have saved a seat just for you.</p>
+  <p class="lede center">Kindly respond by <strong>December 20, 2026</strong></p>
+
+  <form name="rsvp" method="POST" data-netlify="true" netlify-honeypot="bot-field" class="rsvp-form" id="rsvpForm">
+    <input type="hidden" name="form-name" value="rsvp">
+    <p class="hidden-field"><label>Don't fill this out: <input name="bot-field"></label></p>
+
+    <label class="field">
+      <span>Full name</span>
+      <input type="text" name="name" required placeholder="Your full name">
+    </label>
+
+    <label class="field">
+      <span>Will you be joining us?</span>
+      <select name="attending" required id="attendingSelect">
+        <option value="">Please select</option>
+        <option value="Joyfully accepts">Joyfully accepts</option>
+        <option value="Regretfully declines">Regretfully declines</option>
+      </select>
+    </label>
+
+    <label class="field" id="guestField">
+      <span>Number of guests (including you)</span>
+      <input type="number" name="guests" min="1" max="10" value="1">
+    </label>
+
+    <label class="field">
+      <span>Message for the couple (optional)</span>
+      <textarea name="message" rows="3" placeholder="Leave a note..."></textarea>
+    </label>
+
+    <button type="submit" class="btn-solid">Send RSVP</button>
+    <p class="form-status" id="formStatus"></p>
+  </form>
+</section>
+
+<!-- ============ GIFTS ============ -->
+<section class="section cream">
+  <p class="eyebrow center">Our future home</p>
+  <h2 class="script center">Registry &amp; Gifts</h2>
+  <p class="lede center">Your presence at our celebration is the greatest gift we could ever ask for.
+    However, should you wish to bless us with something more, we would be truly grateful for a
+    contribution to our future home.</p>
+
+  <div class="gift-cards">
+    <div class="gift-card">
+      <p class="eyebrow small center">Bank transfer</p>
+      <p class="gift-bank center">BPI</p>
+      <p class="gift-name center">Klarisse Talibsao</p>
+    </div>
+    <div class="gift-card">
+      <p class="eyebrow small center">E-wallet</p>
+      <p class="gift-bank center">GCash</p>
+      <p class="gift-name center">Johndel Catapang</p>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <p class="script small-script">J &amp; K</p>
+  <p>December 20, 2026 &middot; Silang &amp; Amadeo, Cavite</p>
+</footer>
+
+<!-- ============ BACKGROUND MUSIC ============ -->
+<audio id="bgMusic" loop preload="auto">
+  <source src="right time.mp3" type="audio/mpeg">
+</audio>
+
+<button class="music-toggle" id="musicToggle" aria-label="Toggle Background Music" title="Music">
+  <span class="music-bars" id="musicBars">
+    <span class="music-bar"></span>
+    <span class="music-bar"></span>
+    <span class="music-bar"></span>
+  </span>
+  <svg class="music-mute-icon" id="musicMuteIcon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:none;">
+    <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+    <line x1="23" y1="9" x2="17" y2="15"></line>
+    <line x1="17" y1="9" x2="23" y2="15"></line>
+  </svg>
+</button>
+
+<script src="script.js"></script>
+</body>
+</html>
